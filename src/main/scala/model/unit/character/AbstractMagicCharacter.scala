@@ -23,7 +23,7 @@ abstract class AbstractMagicCharacter(name: String, healthPoints: Int, defense: 
    * unit and have the same mana points.
    *
    * @param obj the object to compare with.
-   * @return `true` if both characters are equal, `false` otherwise.
+   * @return `trueif both characters are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     super.equals(obj) && mana == obj.asInstanceOf[AbstractMagicCharacter].mana

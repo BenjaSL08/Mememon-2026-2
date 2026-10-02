@@ -14,7 +14,7 @@ import cl.uchile.dcc.model.unit.GameUnit
  */
 trait GameCharacter extends GameUnit:
 
-  /** Returns the weapon in this character's slot, or `None` if the slot is empty. */
+  /** Returns the weapon in this character's slot, or `Noneif the slot is empty. */
   def weapon: Option[Weapon]
 
   /** Returns the items in this character's inventory, in the order they were added. */
@@ -27,11 +27,3 @@ trait GameCharacter extends GameUnit:
    */
   def addItem(item: Item): Unit
 
-  /**
-   * Removes an item from this character's inventory.
-   *
-   * If the inventory has several equal items, only the first one is removed.
-   *
-   * @param item the item to remove.
-   */
-  def removeItem(item: Item): Unit

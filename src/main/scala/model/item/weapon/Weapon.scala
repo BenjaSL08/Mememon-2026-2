@@ -19,5 +19,5 @@ trait Weapon extends Item:
   /** Returns the weight of this weapon. */
   def weight: Int
 
-  /** Returns the character that owns this weapon, or `None` if it has no owner. */
+  /** Returns the character that owns this weapon, or `Noneif it has no owner. */
   def owner: Option[GameCharacter]

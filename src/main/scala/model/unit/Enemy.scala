@@ -26,7 +26,7 @@ class Enemy(name: String, healthPoints: Int, defense: Int, weight: Int, private 
    * have the same attack points.
    *
    * @param obj the object to compare with.
-   * @return `true` if both enemies are equal, `false` otherwise.
+   * @return `trueif both enemies are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     super.equals(obj) && attack == obj.asInstanceOf[Enemy].attack

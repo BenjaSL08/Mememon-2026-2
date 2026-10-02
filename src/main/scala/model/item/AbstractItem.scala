@@ -17,7 +17,7 @@ abstract class AbstractItem(private val _name: String) extends Item:
    * is never equal to a Dagger) and have the same name.
    *
    * @param obj the object to compare with.
-   * @return `true` if both items are equal, `false` otherwise.
+   * @return `trueif both items are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     if getClass == obj.getClass then

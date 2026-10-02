@@ -35,7 +35,7 @@ abstract class AbstractGameUnit(private val _name: String, private val _healthPo
    * defense and weight.
    *
    * @param obj object to compare with.
-   * @return `true` if both units are equal, `false` otherwise.
+   * @return `trueif both units are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     if getClass == obj.getClass then

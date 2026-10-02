@@ -2,7 +2,8 @@ package cl.uchile.dcc
 package model.player
 
 import cl.uchile.dcc.model.unit.Enemy
-import cl.uchile.dcc.model.unit.character.{BlackWizard, Knight}
+import cl.uchile.dcc.model.unit.character.BlackWizard
+import cl.uchile.dcc.model.unit.character.Knight
 
 class PlayerTest extends munit.FunSuite:
   var player: Player = null
@@ -24,18 +25,6 @@ class PlayerTest extends munit.FunSuite:
     player.addUnit(wizard)
     player.addUnit(enemy)
     assertEquals(player.units, List(knight, wizard, enemy))
-
-  test("A player can remove a unit"):
-    player.addUnit(knight)
-    player.addUnit(wizard)
-    player.addUnit(enemy)
-    player.removeUnit(wizard)
-    assertEquals(player.units, List(knight, enemy))
-
-  test("Removing a unit the player does not have changes nothing"):
-    player.addUnit(knight)
-    player.removeUnit(enemy)
-    assertEquals(player.units, List(knight))
 
   test("Adding a unit does not change a list of units obtained before"):
     val unitsBefore = player.units

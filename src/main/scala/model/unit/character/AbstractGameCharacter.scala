@@ -24,7 +24,7 @@ abstract class AbstractGameCharacter(name: String, healthPoints: Int, defense: I
   /** The weapon slot. Private, so only this class can change it. */
   private var _weapon: Option[Weapon] = None
 
-  /** The inventory. Private, so it can only change through [[addItem]] and [[removeItem]]. */
+  /** The inventory. Private, so it can only change through [[addItem]] ]. */
   private val _inventory = mutable.ListBuffer[Item]()
 
   override def weapon: Option[Weapon] = _weapon
@@ -34,4 +34,3 @@ abstract class AbstractGameCharacter(name: String, healthPoints: Int, defense: I
 
   override def addItem(item: Item): Unit = _inventory += item
 
-  override def removeItem(item: Item): Unit = _inventory -= item

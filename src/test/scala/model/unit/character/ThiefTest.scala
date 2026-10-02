@@ -3,7 +3,8 @@ package model.unit.character
 
 import cl.uchile.dcc.model.item.potion.HealingPotion
 import cl.uchile.dcc.model.item.weapon.Sword
-import cl.uchile.dcc.model.unit.{Enemy, GameUnit}
+import cl.uchile.dcc.model.unit.Enemy
+import cl.uchile.dcc.model.unit.GameUnit
 
 class ThiefTest extends munit.FunSuite:
   var thief: Thief = null
@@ -35,14 +36,6 @@ class ThiefTest extends munit.FunSuite:
     thief.addItem(potion)
     thief.addItem(sword)
     assertEquals(thief.inventory, List(potion, sword))
-
-  test("A thief can remove an item from its inventory"):
-    val potion = new HealingPotion("Potion")
-    val sword = new Sword("Excalibur", 30, 10)
-    thief.addItem(potion)
-    thief.addItem(sword)
-    thief.removeItem(potion)
-    assertEquals(thief.inventory, List(sword))
 
   test("Adding an item does not change an inventory obtained before"):
     val inventoryBefore = thief.inventory

@@ -22,5 +22,5 @@ trait GameUnit:
   /** Returns the weight of this unit, which determines how fast it gets its turn. */
   def weight: Int
 
-  /** Returns `true` if this unit has more than zero health points. */
+  /** Returns `trueif this unit has more than zero health points. */
   def isAlive: Boolean

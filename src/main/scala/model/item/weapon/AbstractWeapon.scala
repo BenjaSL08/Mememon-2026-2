@@ -34,7 +34,7 @@ abstract class AbstractWeapon(name: String, private val _attack: Int, private va
    * state that changes during the game, not part of what the weapon is.
    *
    * @param obj the object to compare with.
-   * @return `true` if both weapons are equal, `false` otherwise.
+   * @return `trueif both weapons are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     if super.equals(obj) then

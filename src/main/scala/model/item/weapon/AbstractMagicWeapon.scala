@@ -22,7 +22,7 @@ abstract class AbstractMagicWeapon(name: String, attack: Int, weight: Int,
    * weapon and have the same magic attack points.
    *
    * @param obj the object to compare with.
-   * @return `true` if both weapons are equal, `false` otherwise.
+   * @return `trueif both weapons are equal, `falseotherwise.
    */
   override def equals(obj: Any): Boolean =
     super.equals(obj) && magicAttack == obj.asInstanceOf[AbstractMagicWeapon].magicAttack
