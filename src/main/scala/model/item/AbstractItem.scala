@@ -20,9 +20,6 @@ abstract class AbstractItem(private val _name: String) extends Item:
    * @return `true` if both items are equal, `false` otherwise.
    */
   override def equals(obj: Any): Boolean =
-    if obj != null && getClass == obj.getClass then
+    if getClass == obj.getClass then
       name == obj.asInstanceOf[AbstractItem].name
     else false
-
-  /** Returns a hash code consistent with [[equals]]: equal items have equal hash codes. */
-  override def hashCode: Int = name.hashCode

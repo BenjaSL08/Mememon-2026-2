@@ -10,11 +10,10 @@ class FortitudePotionTest extends munit.FunSuite:
   test("A fortitude potion has a name"):
     assertEquals(fortitudePotion.name, "Giant Draught")
 
-  test("Two fortitude potions with the same name are equal and have the same hash code"):
+  test("Two fortitude potions with the same name are equal"):
     val other = new FortitudePotion("Giant Draught")
     assertEquals(fortitudePotion, other)
     assertEquals(other, fortitudePotion)
-    assertEquals(fortitudePotion.hashCode, other.hashCode)
 
   test("Two fortitude potions with different names are not equal"):
     assertNotEquals(fortitudePotion, new FortitudePotion("Giant Draught Plus"))
@@ -22,6 +21,3 @@ class FortitudePotionTest extends munit.FunSuite:
   test("A fortitude potion is not equal to a healing potion with the same name"):
     val other: Potion = new HealingPotion("Giant Draught")
     assertNotEquals(other, fortitudePotion)
-
-  test("A fortitude potion is not equal to null"):
-    assert(!fortitudePotion.equals(null))

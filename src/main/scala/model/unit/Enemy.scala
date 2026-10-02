@@ -31,5 +31,3 @@ class Enemy(name: String, healthPoints: Int, defense: Int, weight: Int, private 
   override def equals(obj: Any): Boolean =
     super.equals(obj) && attack == obj.asInstanceOf[Enemy].attack
 
-  /** Returns a hash code consistent with [[equals]]. */
-  override def hashCode: Int = (super.hashCode, attack).hashCode

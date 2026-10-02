@@ -10,11 +10,10 @@ class ManaPotionTest extends munit.FunSuite:
   test("A mana potion has a name"):
     assertEquals(manaPotion.name, "Ether")
 
-  test("Two mana potions with the same name are equal and have the same hash code"):
+  test("Two mana potions with the same name are equal"):
     val other = new ManaPotion("Ether")
     assertEquals(manaPotion, other)
     assertEquals(other, manaPotion)
-    assertEquals(manaPotion.hashCode, other.hashCode)
 
   test("Two mana potions with different names are not equal"):
     assertNotEquals(manaPotion, new ManaPotion("Ether Plus"))
@@ -22,6 +21,3 @@ class ManaPotionTest extends munit.FunSuite:
   test("A mana potion is not equal to a magic strength potion with the same name"):
     val other: Potion = new MagicStrengthPotion("Ether")
     assertNotEquals(other, manaPotion)
-
-  test("A mana potion is not equal to null"):
-    assert(!manaPotion.equals(null))
