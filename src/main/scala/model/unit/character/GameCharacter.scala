@@ -6,8 +6,8 @@ import cl.uchile.dcc.model.item.weapon.Weapon
 import cl.uchile.dcc.model.unit.GameUnit
 
 /**
- * A unit with a character class (Knight, Archer, Thief, Black Mage or
- * White Mage).
+ * A unit with a character class (Knight, Archer, Thief, Black Wizard or
+ * White Wizard).
  *
  * Besides the attributes of every unit, a character has a weapon slot and an
  * inventory where it stores its items.
