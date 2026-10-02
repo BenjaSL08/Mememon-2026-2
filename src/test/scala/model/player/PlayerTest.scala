@@ -13,9 +13,9 @@ class PlayerTest extends munit.FunSuite:
 
   override def beforeEach(context: BeforeEach): Unit =
     player = new Player()
-    knight = new Knight("Arthur", 100, 20, 80)
-    wizard = new BlackWizard("Vivi", 60, 5, 40, 50)
-    enemy = new Enemy("Goblin", 50, 5, 30, 12)
+    knight = new Knight("Cristiano Ronaldo", 100, 20, 80)
+    wizard = new BlackWizard("Ryze", 60, 5, 40, 50)
+    enemy = new Enemy("Chovy", 50, 5, 30, 12)
 
   test("A player starts without units"):
     assertEquals(player.units, List())
@@ -40,11 +40,11 @@ class PlayerTest extends munit.FunSuite:
     assertEquals(player.isDefeated, false)
 
   test("A player with at least one unit alive is not defeated"):
-    player.addUnit(new Knight("Arthur", 0, 20, 80))
+    player.addUnit(new Knight("Cristiano Ronaldo", 0, 20, 80))
     player.addUnit(enemy)
     assertEquals(player.isDefeated, false)
 
   test("A player whose units are all dead is defeated"):
-    player.addUnit(new Knight("Arthur", 0, 20, 80))
-    player.addUnit(new Enemy("Goblin", 0, 5, 30, 12))
+    player.addUnit(new Knight("Cristiano Ronaldo", 0, 20, 80))
+    player.addUnit(new Enemy("Chovy", 0, 5, 30, 12))
     assertEquals(player.isDefeated, true)

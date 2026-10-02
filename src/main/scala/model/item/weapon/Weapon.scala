@@ -8,8 +8,7 @@ import cl.uchile.dcc.model.unit.character.GameCharacter
  * A weapon that a character can equip to attack.
  *
  * A weapon has attack points, a weight and may have an owner: the character
- * that has it equipped. Only characters can own weapons, since enemies cannot
- * equip them.
+ * that has it equipped. Only characters can own weapons, NOT ENNEMIES.
  */
 trait Weapon extends Item:
 
@@ -19,5 +18,5 @@ trait Weapon extends Item:
   /** Returns the weight of this weapon. */
   def weight: Int
 
-  /** Returns the character that owns this weapon, or `Noneif it has no owner. */
+  /** Returns the character that owns this weapon, or `None if it has no owner. */
   def owner: Option[GameCharacter]

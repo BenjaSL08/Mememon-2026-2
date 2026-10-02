@@ -2,7 +2,7 @@ package cl.uchile.dcc
 package model.unit.character
 
 /**
- * An archer, one of the common character classes, which cannot use magic.
+ * An archer, cannot use magic since it is common.
  *
  * @param name the name of the archer.
  * @param healthPoints the health points of the archer.

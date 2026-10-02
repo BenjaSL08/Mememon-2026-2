@@ -11,8 +11,8 @@ class ConsumePotionTest extends munit.FunSuite:
     assertEquals(action.name, "Consume potion")
 
   test("Consuming a potion has the list of potions it could consume"):
-    val healing = new HealingPotion("Hi-Potion")
-    val mana = new ManaPotion("Ether")
+    val healing = new HealingPotion("Life Potion")
+    val mana = new ManaPotion("Mana Potion")
     val action: ItemAction = new ConsumePotion(List(healing, mana))
     assertEquals(action.items, List(healing, mana))
 

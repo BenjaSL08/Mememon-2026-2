@@ -21,13 +21,20 @@ import scala.collection.mutable
 abstract class AbstractGameCharacter(name: String, healthPoints: Int, defense: Int, weight: Int)
   extends AbstractGameUnit(name, healthPoints, defense, weight), GameCharacter:
 
-  /** The weapon slot. Private, so only this class can change it. */
+  /** The weapon slot. Priv so only this class can change it. */
   private var _weapon: Option[Weapon] = None
 
-  /** The inventory. Private, so it can only change through [[addItem]] ]. */
+  /** The inventory. Priv so it can only change through [[addItem]] . */
   private val _inventory = mutable.ListBuffer[Item]()
 
   override def weapon: Option[Weapon] = _weapon
+
+  /**
+   * The action bar of a character is its weight plus half the weight of its
+   * weapon, or just its weight if it has no weapon.
+   */
+  override def maxActionBar: Double =
+    if weapon.isEmpty then weight else weight + 0.5 * weapon.get.weight
 
   /** Returns a copy of the inventory, so changing it from outside is not possible. */
   override def inventory: List[Item] = _inventory.toList

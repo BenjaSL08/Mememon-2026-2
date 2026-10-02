@@ -30,7 +30,7 @@ abstract class AbstractWeapon(name: String, private val _attack: Int, private va
    * Compares this weapon with another object.
    *
    * Two weapons are equal when they belong to the same concrete class and have
-   * the same name, attack points and weight. The owner is not compared: it is
+   * the same name, attack points and weight. The owner is not compared it is
    * state that changes during the game, not part of what the weapon is.
    *
    * @param obj the object to compare with.

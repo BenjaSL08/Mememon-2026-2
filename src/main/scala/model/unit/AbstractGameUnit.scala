@@ -30,10 +30,6 @@ abstract class AbstractGameUnit(private val _name: String, private val _healthPo
   /**
    * Compares this unit with another object.
    *
-   * Two units are equal when they belong to the same concrete class (a Knight
-   * is never equal to an Archer) and have the same name, health points,
-   * defense and weight.
-   *
    * @param obj object to compare with.
    * @return `trueif both units are equal, `falseotherwise.
    */

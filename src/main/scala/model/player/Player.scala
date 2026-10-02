@@ -8,12 +8,12 @@ import scala.collection.mutable
 /**
  * A player that controls one of the two sides of a match.
  *
- * A player has a single list of units, which can mix characters and enemies,
- * and knows whether it has been defeated.
+ * A player has a  list of units, which can mix characters and enemies
  */
+
 class Player:
 
-  /** The units of this player. Private, so it can only change through [[addUnit]] ]. */
+  /** The units of this player. Priv so it can only change through [[addUnit]] ]. */
   private val _units = mutable.ListBuffer[GameUnit]()
 
   /** Returns a copy of this player's units, in the order they were added. */

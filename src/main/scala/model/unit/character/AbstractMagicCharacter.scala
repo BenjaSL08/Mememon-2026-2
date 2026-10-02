@@ -19,9 +19,6 @@ abstract class AbstractMagicCharacter(name: String, healthPoints: Int, defense: 
   /**
    * Compares this magic character with another object.
    *
-   * Two magic characters are equal when they share all the attributes of a
-   * unit and have the same mana points.
-   *
    * @param obj the object to compare with.
    * @return `trueif both characters are equal, `falseotherwise.
    */

@@ -11,8 +11,8 @@ class EquipWeaponTest extends munit.FunSuite:
     assertEquals(action.name, "Equip weapon")
 
   test("Equipping a weapon has the list of weapons it could equip"):
-    val sword = new Sword("Excalibur", 30, 10)
-    val staff = new Staff("Healing Staff", 10, 8, 30)
+    val sword = new Sword("Diamond Sword", 25, 10)
+    val staff = new Staff("Healer Staff", 10, 8, 30)
     val action: ItemAction = new EquipWeapon(List(sword, staff))
     assertEquals(action.items, List(sword, staff))
 

@@ -3,5 +3,5 @@ package model.action.spell
 
 import cl.uchile.dcc.model.action.AbstractAction
 
-/** Purification, a white magic spell that curses the target enemy. */
+/** Purification, a WHITE MAGIC spell that curses the target. */
 class Purification extends AbstractAction("Purification"), WhiteMagicSpell

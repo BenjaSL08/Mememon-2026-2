@@ -4,8 +4,8 @@ package model.unit
 /**
  * An enemy unit.
  *
- * Enemies are different compared to characters, an enemy has its own attack points and cannot equip
- * weapons or carry items, so it has neither a weapon slot nor an inventory.
+ * Enemies are different to characters, an enemy has its own attack points and cannot equip
+ * weapons or carry items.
  *
  * @param name  name of the enemy.
  * @param healthPoints  health points of the enemy.
@@ -19,12 +19,11 @@ class Enemy(name: String, healthPoints: Int, defense: Int, weight: Int, private 
   /** Returns the attack points of this enemy. */
   def attack: Int = _attack
 
+  /** The action bar of an enemy is its weight. */
+  override def maxActionBar: Double = weight
+
   /**
    * Compares this enemy with another object.
-   *
-   * Two enemies are equal when they share all the attributes of a unit and
-   * have the same attack points.
-   *
    * @param obj the object to compare with.
    * @return `trueif both enemies are equal, `falseotherwise.
    */

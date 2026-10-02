@@ -18,15 +18,15 @@ class PanelTest extends munit.FunSuite:
     assertEquals(panel.units, List())
 
   test("A panel can hold characters and enemies"):
-    val knight = new Knight("Arthur", 100, 20, 80)
-    val enemy = new Enemy("Goblin", 50, 5, 30, 12)
+    val knight = new Knight("Cristiano Ronaldo", 100, 20, 80)
+    val enemy = new Enemy("Messi", 50, 5, 30, 12)
     panel.addUnit(knight)
     panel.addUnit(enemy)
     assertEquals(panel.units, List(knight, enemy))
 
   test("Adding a unit does not change a list of units obtained before"):
     val unitsBefore = panel.units
-    panel.addUnit(new Knight("Arthur", 100, 20, 80))
+    panel.addUnit(new Knight("Cristiano Ronaldo", 100, 20, 80))
     assertEquals(unitsBefore, List())
 
   test("A panel starts without neighbors"):

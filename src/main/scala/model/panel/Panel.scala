@@ -6,7 +6,7 @@ import cl.uchile.dcc.model.unit.GameUnit
 import scala.collection.mutable
 
 /**
- * A square of the game map where units can stand.
+ * A square of the game map where units are showed.
  *
  * A panel has coordinates, keeps the units that are on it and knows its
  * neighbors: the adjacent panels a unit could move to from this one.
@@ -16,10 +16,10 @@ import scala.collection.mutable
  */
 class Panel(private val _x: Int, private val _y: Int):
 
-  /** The units on this panel. Private, so it can only change through [[addUnit]]. */
+  /** The units on this panel. Priv so it can only change through [[addUnit]]. */
   private val _units = mutable.ListBuffer[GameUnit]()
 
-  /** The adjacent panels. Private, so it can only change through [[addNeighbor]]. */
+  /** The adjacent panels. Priv so it can only change through [[addNeighbor]]. */
   private val _neighbors = mutable.ListBuffer[Panel]()
 
   /** Returns the x coordinate of this panel. */
@@ -28,7 +28,7 @@ class Panel(private val _x: Int, private val _y: Int):
   /** Returns the y coordinate of this panel. */
   def y: Int = _y
 
-  /** Returns a copy of the units on this panel, in the order they were placed. */
+  /** Returns a copy of the units on this panel, */
   def units: List[GameUnit] = _units.toList
 
   /**

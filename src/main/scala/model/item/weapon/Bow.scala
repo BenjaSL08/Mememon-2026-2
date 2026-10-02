@@ -2,7 +2,7 @@ package cl.uchile.dcc
 package model.item.weapon
 
 /**
- * A bow, one of the common weapons.
+ * A bow, one common weapon.
  *
  * @param name the name of the weapon.
  * @param attack the attack points of the weapon.

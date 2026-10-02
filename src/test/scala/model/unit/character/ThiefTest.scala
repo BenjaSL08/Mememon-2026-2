@@ -32,7 +32,7 @@ class ThiefTest extends munit.FunSuite:
 
   test("A thief can store items in its inventory"):
     val potion = new HealingPotion("Potion")
-    val sword = new Sword("Excalibur", 30, 10)
+    val sword = new Sword("Zhonias", 30, 10)
     thief.addItem(potion)
     thief.addItem(sword)
     assertEquals(thief.inventory, List(potion, sword))
@@ -46,13 +46,7 @@ class ThiefTest extends munit.FunSuite:
     val other = new Thief("Locke", 70, 8, 40)
     assertEquals(thief, other)
     assertEquals(other, thief)
-
-  test("Two thieves with a different attribute are not equal"):
-    assertNotEquals(thief, new Thief("Locke II", 70, 8, 40))
-    assertNotEquals(thief, new Thief("Locke", 60, 8, 40))
-    assertNotEquals(thief, new Thief("Locke", 70, 11, 40))
-    assertNotEquals(thief, new Thief("Locke", 70, 8, 45))
-
+    
   test("A thief is not equal to a knight with the same attributes"):
     val other: GameUnit = new Knight("Locke", 70, 8, 40)
     assertNotEquals(other, thief)

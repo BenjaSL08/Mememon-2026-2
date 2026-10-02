@@ -24,3 +24,10 @@ trait GameUnit:
 
   /** Returns `trueif this unit has more than zero health points. */
   def isAlive: Boolean
+
+  /**
+   * Returns the max of this unit's action bar: how much it must fill
+   * before getting its turn.
+   */
+  def maxActionBar: Double
+

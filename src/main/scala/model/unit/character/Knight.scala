@@ -2,7 +2,7 @@ package cl.uchile.dcc
 package model.unit.character
 
 /**
- * A knight, one of the common character classes, which cannot use magic.
+ * A knight, cannot use magic since it is common.
  *
  * @param name the name of the knight.
  * @param healthPoints the health points of the knight.
