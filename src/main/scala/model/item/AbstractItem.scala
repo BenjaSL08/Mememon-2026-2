@@ -1,12 +1,14 @@
 package cl.uchile.dcc
 package model.item
 
+import cl.uchile.dcc.model.action.AbstractTarget
+
 /**
  * Base implementation shared by every [[Item]].
  *
  * @param _name the name of the item.
  */
-abstract class AbstractItem(private val _name: String) extends Item:
+abstract class AbstractItem(private val _name: String) extends AbstractTarget, Item:
 
   override def name: String = _name
 
@@ -17,7 +19,7 @@ abstract class AbstractItem(private val _name: String) extends Item:
    * is never equal to a Dagger) and have the same name.
    *
    * @param obj the object to compare with.
-   * @return `trueif both items are equal, `falseotherwise.
+   * @return `true` if both items are equal, `false` otherwise.
    */
   override def equals(obj: Any): Boolean =
     if getClass == obj.getClass then

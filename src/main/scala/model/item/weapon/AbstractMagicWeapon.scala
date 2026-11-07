@@ -9,11 +9,13 @@ package model.item.weapon
  * @param weight the weight of the weapon.
  * @param _magicAttack the magic attack points of the weapon.
  */
-abstract class AbstractMagicWeapon(name: String, attack: Int, weight: Int,
-                                   private val _magicAttack: Int)
+abstract class AbstractMagicWeapon(name: String, attack: Int, weight: Int, private val _magicAttack: Int)
   extends AbstractWeapon(name, attack, weight), MagicWeapon:
 
   override def magicAttack: Int = _magicAttack
+
+  /** Spells cast with a magic weapon deal its magic attack as damage. */
+  override def magicDamage: Int = magicAttack
 
   /**
    * Compares this magic weapon with another object.
@@ -22,7 +24,7 @@ abstract class AbstractMagicWeapon(name: String, attack: Int, weight: Int,
    * weapon and have the same magic attack points.
    *
    * @param obj the object to compare with.
-   * @return `trueif both weapons are equal, `falseotherwise.
+   * @return `true` if both weapons are equal, `false` otherwise.
    */
   override def equals(obj: Any): Boolean =
     super.equals(obj) && magicAttack == obj.asInstanceOf[AbstractMagicWeapon].magicAttack

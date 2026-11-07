@@ -4,6 +4,8 @@ package model.turn
 import cl.uchile.dcc.model.unit.Enemy
 import cl.uchile.dcc.model.unit.character.Knight
 import cl.uchile.dcc.model.unit.character.Thief
+import cl.uchile.dcc.model.action.EquipWeapon
+import cl.uchile.dcc.model.item.weapon.Sword
 
 class TurnSchedulerTest extends munit.FunSuite:
   var scheduler: TurnScheduler = null
@@ -38,6 +40,12 @@ class TurnSchedulerTest extends munit.FunSuite:
 
   test("The maximum action bar of a character without a weapon is its weight"):
     assertEquals(scheduler.maxActionBar(knight), 80.0)
+
+  test("The maximum action bar of a character with a weapon adds half the weight of the weapon"):
+    val sword = new Sword("Excalibur", 30, 10)
+    knight.addItem(sword)
+    knight.doAction(new EquipWeapon(knight.weapons), sword)
+    assertEquals(scheduler.maxActionBar(knight), 85.0)
 
   test("The maximum action bar of an enemy is its weight"):
     assertEquals(scheduler.maxActionBar(enemy), 30.0)

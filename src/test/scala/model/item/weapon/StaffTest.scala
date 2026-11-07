@@ -30,3 +30,7 @@ class StaffTest extends munit.FunSuite:
   test("A staff is not equal to a wand with the same attributes"):
     val other: Weapon = new Wand("Healing Staff", 10, 8, 30)
     assertNotEquals(other, staff)
+
+  test("Spells cast with a staff deal its magic attack as magic damage"):
+    assertEquals(staff.magicDamage, 30)
+    assertEquals(staff.attackDamage, 10)

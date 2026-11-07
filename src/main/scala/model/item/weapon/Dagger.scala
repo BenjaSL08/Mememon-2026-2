@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package model.item.weapon
 
+import cl.uchile.dcc.model.unit.character.GameCharacter
+
 /**
  * A dagger, one common weapon.
  *
@@ -9,4 +11,7 @@ package model.item.weapon
  * @param weight the weight of the weapon.
  */
 class Dagger(name: String, attack: Int, weight: Int)
-  extends AbstractWeapon(name, attack, weight)
+  extends AbstractWeapon(name, attack, weight):
+
+  /** The character decides if it can equip a dagger. */
+  override def receiveEquip(character: GameCharacter): Unit = character.equipDagger(this)
