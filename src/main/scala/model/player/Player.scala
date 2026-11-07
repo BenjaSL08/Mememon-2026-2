@@ -13,7 +13,7 @@ import scala.collection.mutable
 
 class Player:
 
-  /** The units of this player. Priv so it can only change through [[addUnit]] ]. */
+  /** The units of this player. Priv so it can only change through [[addUnit]] . */
   private val _units = mutable.ListBuffer[GameUnit]()
 
   /** Returns a copy of this player's units, in the order they were added. */
@@ -27,7 +27,7 @@ class Player:
   def addUnit(unit: GameUnit): Unit = _units += unit
 
   /**
-   * Returns `trueif none of this player's units is alive.
+   * Returns `true` if none of this player's units is alive.
    *
    * A player without units counts as defeated, since it has no unit left to
    * play with.
