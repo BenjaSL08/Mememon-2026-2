@@ -35,3 +35,44 @@ class EnemyTest extends munit.FunSuite:
     assertNotEquals(enemy, new Enemy("Goblin", 50, 8, 30, 12))
     assertNotEquals(enemy, new Enemy("Goblin", 50, 5, 25, 12))
     assertNotEquals(enemy, new Enemy("Goblin", 50, 5, 30, 20))
+
+  test("An enemy starts with all its health points"):
+    assertEquals(enemy.maxHealthPoints, 50)
+    assertEquals(enemy.healthPoints, 50)
+
+  test("An enemy attacks with its own attack points"):
+    assertEquals(enemy.attackDamage, 12)
+
+  test("An enemy can only attack and move"):
+    assertEquals(enemy.actions.length, 2)
+    assertEquals(enemy.actions.head.name, "Attack")
+    assertEquals(enemy.findAction("Move").get.name, "Move")
+
+  test("An enemy does not find an action it does not have"):
+    assertEquals(enemy.findAction("Thunder"), None)
+
+  test("Damage lowers the health points of an enemy"):
+    enemy.receiveDamage(20)
+    assertEquals(enemy.healthPoints, 30)
+
+  test("The health points of an enemy never go below zero"):
+    enemy.receiveDamage(80)
+    assertEquals(enemy.healthPoints, 0)
+    assertEquals(enemy.isAlive, false)
+
+  test("A negative damage does not heal an enemy"):
+    enemy.receiveDamage(20)
+    enemy.receiveDamage(-10)
+    assertEquals(enemy.healthPoints, 30)
+
+  test("Healing restores health points up to the maximum"):
+    enemy.receiveDamage(20)
+    enemy.heal(5)
+    assertEquals(enemy.healthPoints, 35)
+    enemy.heal(100)
+    assertEquals(enemy.healthPoints, 50)
+
+  test("An enemy that lost health points is still equal to an unhurt one"):
+    val other = new Enemy("Goblin", 50, 5, 30, 12)
+    enemy.receiveDamage(10)
+    assertEquals(enemy, other)
